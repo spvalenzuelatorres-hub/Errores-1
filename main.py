@@ -3,11 +3,11 @@
 Mini-proyecto con errores intencionales.
 Objetivo: el revisor debe encontrarlos y proponer fixes via PR.
 """
-import pandas as pd
+import pandas as pd 
 
 # NOMBRE DE FUNCION CONFUSO: hace "promedio de ingresos" pero divide por numero de filas, no por ventas reales
 def calcular_promedio_ingresos(ruta_csv="data/sales.csv"):
-    df = pd.read_csv(ruta_csv)
+    df = pd.read_csv(ruta_csv) # No se encuentra la ruta del archivo csv
 
     # ISSUE 1: asume que no hay nulos ni tipos raros (ver CSV)
     df["revenu"] = df["units"] * df["price"]  # ISSUE 2: columna mal nombrada (typo)
